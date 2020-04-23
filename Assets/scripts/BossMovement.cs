@@ -21,11 +21,11 @@ public class BossMovement : MonoBehaviour
         float radialDistance = Vector3.Distance(target.position, pos);
 
         if (radialDistance < 2) {
-            Debug.Log("<10");
+            // Debug.Log("<10");
             anim.SetTrigger("Attack");
         }
         else if (radialDistance < 5) {
-            Debug.Log("<20");
+            // Debug.Log("<20");
             agent = GetComponent<NavMeshAgent>();
             if (agent != null) {
                 agent.SetDestination(target.position);
@@ -33,11 +33,11 @@ public class BossMovement : MonoBehaviour
             }
         }
         else if (radialDistance < 10) {
-            Debug.Log("<30");
+            // Debug.Log("<30");
             anim.SetFloat("Speed", 0.0f);
             anim.SetBool("isAlert", true);
         } else {
-            Debug.Log(">30");
+            // Debug.Log(">30");
             anim.SetBool("isAlert", false);
             anim.SetFloat("Speed", 0.0f);
         }
